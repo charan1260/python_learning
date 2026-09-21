@@ -128,7 +128,7 @@ print(d, type(d))#{1,2,3,4} <class 'set'>
 # print(g)#error
 print(h)#{(1, 2, 3), 3.13, True, 4}
 print(i)#{'rakesh',4,True}
-# print(j) #error
+# print(j) #error set() takes at most 1 atgument
 print(k)#{1,2,3}
 print(l)#{4,5,6}
 print(m)#{1}
@@ -140,56 +140,70 @@ a = {}
 b = dict() 
 c = {1,2,3,4,5}
 d = {1:'a', 2:'b', 3:'c', 4:'d'}
-# e = {[1,2,3]:'a', 2:'b'}
+# e = {[1,2,3]:'a', 2:'b'}#a python list cannot be used as a dictionary key because it is mutable 
 # f = {{1,2,3}:'a', 2:'b'}
 g = {'rakesh':'a', 2:'b'}
 h = {(1,2,3):'a', 2:'b'}
 i = {1:'a', 1:'b', 1:'c', 2:'x', 2:'y'}
-# j = dict(1,2,3,4,5)
-# k = dict(1:'a', 2:'b')
+# j = dict(1,2,3,4,5)#error dict() takes at most 1 argument 
+k = dict({1:'a', 2:'b'})
 l = dict({1:'a', 2:'b'})
 m = dict([(1,2), [3,4], (5,6)])
 n = dict( ((1,2),[3,4])) 
 print(a, type(a))#{} <class 'dict'>
 print(b)#{}   <class 'dict'>
 print(c) #{1,2,3,4,5}
-print(d)
-# print(e)
-# print(f)
-# print(g)
-# print(h)
-# print(i)
-# print(j)
-# print(k)
-# print(l)
-# print(m)
-# print(n)
+print(d)#{1:'a',2:'b',3:'c',4:'d'}}
+# print(e)# error a python list cannot be used as a dictionary key because it is mutable
+# print(f)# a set cannot be used as a dictionary key beacause it is mutable
+print(g)#{'rakesh':'a',2:'b'}
+print(h)#{(1,2,3):'a',2:'b'}
+print(i)#{1:'c',2:'y'}
+# print(j)#error
+print(k)#{1:'a',2:'b'}
+print(l)#{1:'a',2:'b'}
+print(m)#{1:2,3:4,5:6}
+print(n)#{1:2,3:4}
 
 # #String
-# a = 'rakesh'
-# b = "rakesh"
-# c = '''r
-# a
-# k
-# esh'''
-# print(a)
-# print(type(a))
-# print(b)
-# print(type(b))
-# print(c)
-# print(type(c)) 
+a = 'rakesh'
+b = "rakesh"
+c = '''r
+a
+k
+esh'''
+print(a,type(a))#rakesh
+print(type(a))#class <'str'>
+print(b)#rakesh
+print(type(b))#
+print(c)
+'''r 
+a
+k
+esh'''
+print(type(c)) 
 
-# #Range/
+#Range
+a = range(5)
+b = range(3,7)
+c = range(3, 12,3 )
+d = range(9,3,-1)
+print(a)# range(0,5)
+print(*a)#0 1 2 3 4
+print(*b)#3 4 5 6
+print(*c)#3 6 9
+print(*d)#9 8 7 6 5 4
 
 # #Slicing
-# a = [4,1,2,3,5] 
-# print(a[:])
-# print(a[:3])
-# print(a[2:])
-# print(a[::-1])
-# print(a[:3:-1])
-# print(a[3::-1])
-# b = {3,2,4,6}
+a = [4,1,2,3,5] 
+print(a[:])# a[0:5:1]=[4,1,2,3,5]
+print(a[:3])#a[0:3:1]=[4,1,2]
+print(a[2:])#a[2:5:1]=[2,3,5]
+print(a[::-1])#a[4:-1:-1]=[5,3,2,1,4]
+print(a[:3:-1])#a[4:3:-1]=[5]
+print(a[3::-1])#a[3:-1:-1]=[3,2,1,4]
+# b = {3,2,4,6}#set is not subscriptable
 # print(b[:3])
 # c = {1:'a', 2:'b', 3:'c'}
-# print(c[:2])
+# print(c[:2])# unhasable slice
+
