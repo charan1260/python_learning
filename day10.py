@@ -1,53 +1,58 @@
 for x in 'rakesh':     
-    print(x, end=' ')  
+    print(x, end=' ') # r a k e s h
 print()
 
 for x in range(2, 7):
-    print(x, end=' ')  
+    print(x, end=' ')  #2 3 4 5 6
 print()
 for x in [1,2,3]:
-    print(x, end=' ')
+    print(x, end=' ')# 1 2 3
 print()
 for x in (4,5,6):
-    print(x, end=' ') 
+    print(x, end=' ') #4 5 6
 print()
 for x in {7, 8, 9}:
-    print(x, end=' ') 
+    print(x, end=' ') # 8 9 7
 print()
 d = {1:'a', 2:'b', 3:'c'}
 for x in d:
-    print(x, end=' ')  
+    print(x, end=' ')  # 1 2 3 
 print()
 for x in d.keys():
-    print(x, end=' ')  
+    print(x, end=' ')  # 1 2 3
 print()
 for x in d:
-    print(d[x], end=' ') 
+    print(d[x], end=' ') # a  b c
 print()
 for x in d.values():   
-    print(x, end=' ')
+    print(x, end=' ')# a b c
 print()
 for x in d.items():     
-    print(x, end=' ')
+    print(x, end=' ')# (1,'a') (2,'b') (3,'c')
 print()
 
 
-#index based for loop. 
-#       0 1 2 3 4
+# #index based for loop. 
+# #     0 1 2 3 4
 list = [5,4,3,2,1]
 #iterate from left to right 
 for x in range(5):
-    print(list[x], end=' ')  #5 4 3 2 1
+    print(list[x], end=' ')  # 
 print()
-#iterate from right to left 
+# iterate from right to left 
 for x in range(len(list)-1, -1, -1):
     print(list[x], end=' ')           #1 2 3 4 5
 print()
-#iterate from 3rd element 
+#iterate from 3rd element
+for x in range(2,5,1):
+    print(list[x],end=' ')# 3 2 1
+print()
 #iterate in steps of 2
+for x in range(0,5,2):
+    print(list[x],end=' ')# 0 3 1
+print()
 
-
-#tricky
+# #tricky
 l = [1, 2, 3, 4, 5, 6]
 for x in l:
     print(x, end=' ')
@@ -65,26 +70,26 @@ print()
 for x in range(1,11):
     if x % 3 == 0:
         continue 
-    print(x,end=' ')    
+    print(x,end=' ') #1 2 4 5 7 8 10    
 print()
-#break
+# #break
 for x in range(1,11):
     if x % 3 == 0:      
         break 
-    print(x,end=' ')  
+    print(x,end=' ')  # 1 2 
 print()
 #pass 
 for x in range(1,11):
     pass
-a = 21
-#else 
+a = 21 
+# else 
 for x in range(1,11):
     if x % 3 == 0:
         continue 
     print(x, end=' ')
 else:
     print('Loop completed successfully')
-print() 
+print()  
 for x in range(1, 11):
     if x % 3 == 0:
         break 
